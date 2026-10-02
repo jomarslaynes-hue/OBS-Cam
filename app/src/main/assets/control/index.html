@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OBS-Cam Control</title>
+    <style>
+        body { font-family: system-ui; margin: 0; background: #0d1117; color: #e6edf3; }
+        .wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 16px; padding: 18px; margin-bottom: 18px; }
+        .row { display: flex; gap: 12px; flex-wrap: wrap; }
+        button, select, input { border-radius: 10px; padding: 10px 12px; border: 1px solid #30363d; background: #21262d; color: white; }
+        .preview { background: #05080d; border: 1px solid #30363d; border-radius: 16px; min-height: 280px; display: flex; align-items: center; justify-content: center; }
+        .status { color: #7ee787; font-weight: 700; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>OBS-Cam Remote Control</h1>
+    <div class="card preview">
+        <img src="/stream" alt="Live preview" style="width:100%;max-width:700px;border-radius:12px;" />
+    </div>
+
+    <div class="card">
+        <div class="row">
+            <button>Start Stream</button>
+            <button>Stop Stream</button>
+            <button>Rear Camera</button>
+            <button>Torch</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="row">
+            <label>Resolution
+                <select><option>1080p</option><option>720p</option><option>4K</option></select>
+            </label>
+            <label>FPS
+                <select><option>30</option><option>60</option><option>24</option></select>
+            </label>
+            <label>Quality
+                <input type="range" min="1" max="100" value="75" />
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div>Status: <span class="status">Streaming</span></div>
+        <div>IP Address: http://PHONE-IP:8080</div>
+        <div>Clients: 0</div>
+    </div>
+</div>
+</body>
+</html>
